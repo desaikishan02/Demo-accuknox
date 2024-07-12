@@ -1,0 +1,283 @@
+{
+	"info": {
+		"_postman_id": "dbc6a690-e249-4a68-8132-3d8423b771f2",
+		"name": "demo accuknox",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19993068"
+	},
+	"item": [
+		{
+			"name": "Verify Token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIwNzgxNTY3LCJpYXQiOjE3MjA3ODEyNjcsImp0aSI6ImJjOTNjMmQzNzYzNjRmOGZhZTFjNjAxM2JmMWQ0M2Q1IiwidXNlcl9pZCI6MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20ifQ.lgTDCUYKCVzS96aE-M5CI-Dr-tcjTsxNLdcwb6Q_OYo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyMDg3MzY0MiwiaWF0IjoxNzIwNzg3MjQyLCJqdGkiOiI2MGM3ZGEwMmRiNTY0YjU2OGM3YjNjZmIyZjFmOTE4ZCIsInVzZXJfaWQiOjEsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIn0.5ZRiluG4Z4ZzXQY74MFbRy9ex5UUyue1XACP3a3SNIE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/users/token/verify/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"token",
+						"verify",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"admin@gmail.com\",\r\n    \"password\": \"Admin@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/users/login/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"admin10@gmail.com\",\r\n    \"password\": \"Admin@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/users/register/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search User By name and Email",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIwNzg5NTcxLCJpYXQiOjE3MjA3ODkyNzEsImp0aSI6ImVkNGIwNWNkNTE4NjQ0MTdiOGFmZTk3M2M3OWJiYWZkIiwidXNlcl9pZCI6MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20ifQ.STbe5xeN8y5axJoTMKAWjAKz3jLlZEpCzd35FM9gFho",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/users/search/?search=admin",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "admin"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Friend Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIwNzg5NTcxLCJpYXQiOjE3MjA3ODkyNzEsImp0aSI6ImVkNGIwNWNkNTE4NjQ0MTdiOGFmZTk3M2M3OWJiYWZkIiwidXNlcl9pZCI6MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20ifQ.STbe5xeN8y5axJoTMKAWjAKz3jLlZEpCzd35FM9gFho",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"to_user_id\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/friends/friend-request/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"friends",
+						"friend-request",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Accept/Reject Friend Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIwNzkwOTIyLCJpYXQiOjE3MjA3OTA2MjIsImp0aSI6Ijg3ZDYyNDZkZThkMTQ2OGQ5MTFkMWM0N2I4Njk1YTdkIiwidXNlcl9pZCI6MiwiZW1haWwiOiJhZG1pbjFAZ21haWwuY29tIn0.-MVX6D5gfUHZViyuEP2MBzxCtKgiuBnvXCNwPfdqDCY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"action\": \"accept\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/friends/friend-request/1/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"friends",
+						"friend-request",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Friends",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIwNzkxMDA3LCJpYXQiOjE3MjA3OTA3MDcsImp0aSI6ImQ1YWU5YWNkZDY5ZDQ5ZWE4NzA2NDhhMDVlYjUzN2Y4IiwidXNlcl9pZCI6MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20ifQ.ql5peqDirt3851yJX5s0NsMIiUnsMoBtoTOEv3miD_A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/friends/list-of-friends/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"friends",
+						"list-of-friends",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Pending Friend Requests",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIwNzkxMTgyLCJpYXQiOjE3MjA3OTA4ODIsImp0aSI6IjdlMmQzOTdmYWVlMTQ3MzFiYTc4MjdmZWViNzdmNmYzIiwidXNlcl9pZCI6MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20ifQ.gBaoNEpZNpfywMcLRPR5blpQDM0WV_SkY-jXK7T_MTw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/friends/pending-requests/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"friends",
+						"pending-requests",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
